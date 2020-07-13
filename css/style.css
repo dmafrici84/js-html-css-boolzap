@@ -177,7 +177,7 @@ i:hover {
   height: calc(100vh - 60px - 60px);
   overflow-y: auto;
   overflow-x: hidden;
-  margin: 100px 10% 0;
+  padding: 100px 10% 0;
 }
 
 .col-bottom-right {
@@ -238,7 +238,7 @@ i:hover {
   font-size: 16px;
 }
 
-.sms .orario p, .sms .orario p {
+.sms-proprio .orario p, .sms-amico .orario p {
   font-size: 11px;
 }
 
@@ -252,5 +252,9 @@ i:hover {
 }
 
 .non-visibile {
+  display: none;
+}
+
+.templete, .templete1 {
   display: none;
 }

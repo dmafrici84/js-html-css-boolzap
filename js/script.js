@@ -16,22 +16,40 @@ $(document).ready(init);
     var target = $("#messaggio");
 
     target.keyup(function(){
+
       var input = $ (this);
       var txt = input.val();
+
       console.log(txt);
       console.log(txt.length);
-      if (txt.length = 1) {
+
+      if (txt.length > 0) {
         $(".fa-paper-plane").removeClass("non-visibile");
         $(".fa-microphone").addClass("non-visibile");
+      } else {
+        $(".fa-paper-plane").addClass("non-visibile");
+        $(".fa-microphone").removeClass("non-visibile");
       }
 
-      $(".fa-paper-plane").click(function() {
-        var sms = $(".sms:last-child").clone();
-        var textSms = $(".sms .sms-proprio > p").clone();
-        textSms.text(txt);
-        sms.append(sms.append(textSms));
-      });
-
-
     });
+
+    $(".fa-paper-plane").click(function() {
+
+      var txt = target.val();
+      var smsNuovo = $("#nuovoSms");
+      var textSms = $(".templete > .sms");
+      textSms.clone();
+      textSms.children(".sms-proprio").children("p").html(txt);
+      smsNuovo.append(textSms);
+
+      setTimeout(function() {
+      var textAmico = "ok";
+      var smsNuovoAmico = $("#nuovoSms");
+      var textSmsAmico = $(".templete1 > .sms");
+      textSmsAmico.clone();
+      textSmsAmico.children(".sms-amico").children("p").html(textAmico);
+      smsNuovoAmico.append(textSmsAmico);
+    }, 60000);
+    });
+
   }
