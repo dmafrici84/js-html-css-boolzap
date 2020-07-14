@@ -177,7 +177,8 @@ i:hover {
   height: calc(100vh - 60px - 60px);
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 100px 10% 0;
+  margin-top: 60px;
+  padding: 50px 10% 0;
 }
 
 .col-bottom-right {
@@ -227,19 +228,16 @@ i:hover {
   background-color: white;
 }
 
-.sms .orario {
+.sms-proprio .orario, .sms-amico .orario{
   display:flex;
   justify-content: flex-end;
+  font-size: 11px;
 }
 
 .sms-proprio p, .sms-amico p {
   padding: 5px;
   max-width: 100%;
   font-size: 16px;
-}
-
-.sms-proprio .orario p, .sms-amico .orario p {
-  font-size: 11px;
 }
 
 #messaggio {
@@ -252,9 +250,5 @@ i:hover {
 }
 
 .non-visibile {
-  display: none;
-}
-
-.templete, .templete1 {
   display: none;
 }
