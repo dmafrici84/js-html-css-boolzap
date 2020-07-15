@@ -75,6 +75,7 @@ i:hover {
   height: 40px;
   background-color: #ebebeb;
   border-right: solid 1px #bfbfbf;
+  border-bottom: solid 1px #bfbfbf;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,7 +149,12 @@ i:hover {
   margin-right: 10px;
 }
 
-.col-bottom-left .amici:first-child {
+.col-bottom-left .amici:hover {
+  background-color: #dbdbdb;
+  cursor:pointer;
+}
+
+.sfondo-amici {
   background-color: #dbdbdb;
 }
 
@@ -181,6 +187,82 @@ i:hover {
   padding: 50px 10% 0;
 }
 
+.sms::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.sms-proprio {
+  position: relative;
+  float: right;
+  min-width: 50px;
+  max-width: 60%;
+  min-height: 40px;
+  margin: 10px;
+  display:flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #a3f59f
+}
+
+.sms-amico {
+  position: relative;
+  float: left;
+  min-width: 50px;
+  max-width: 60%;
+  min-height: 40px;
+  margin: 10px;
+  display:flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.sms-proprio .txt-sms, .sms-amico .txt-sms {
+  padding-right: : 5px;
+  max-width: 100%;
+  font-size: 16px;
+}
+
+.sms-proprio .orario, .sms-amico .orario {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 11px;
+}
+
+.sms-proprio .sms-options, .sms-amico .sms-options {
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+}
+
+.sms-proprio:hover .sms-options, .sms-amico:hover .sms-options {
+  display: block;
+}
+
+.sms-options-panel {
+  position: absolute;
+  top: calc(100% - 15px);
+  left: calc(100% - 120px);
+  z-index: 99;
+  min-width: 150px;
+  min-height: 85px;
+  background-color: #fff;
+  padding: 10px;
+  line-height: 2;
+  border-radius: 8px;
+  border: solid 1px #dbdbdb;
+}
+
+.sms-info:hover, .sms-cancella:hover {
+  cursor: pointer;
+  color: #dbdbdb;
+}
+
 .col-bottom-right {
   position: fixed;
   bottom: 0;
@@ -196,48 +278,6 @@ i:hover {
 .col-bottom-right  i {
   margin: 0 20px;
   font-size: 25px;
-}
-
-.sms::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.sms-proprio {
-  float: right;
-  max-width: 60%;
-  min-height: 40px;
-  margin: 10px;
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 8px;
-  background-color: #17eb95;
-}
-
-.sms-amico {
-  float: left;
-  max-width: 60%;
-  min-height: 40px;
-  margin: 10px;
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 8px;
-  background-color: white;
-}
-
-.sms-proprio .orario, .sms-amico .orario{
-  display:flex;
-  justify-content: flex-end;
-  font-size: 11px;
-}
-
-.sms-proprio p, .sms-amico p {
-  padding: 5px;
-  max-width: 100%;
-  font-size: 16px;
 }
 
 #messaggio {

@@ -23,6 +23,8 @@ $(document).ready(init);
 
   function init(){
     addInputEventLisstener();
+    addTestListener();
+    addAmicoListener();
   }
 
   function addInputEventLisstener() {
@@ -33,10 +35,13 @@ $(document).ready(init);
     var button = $(".fa-paper-plane");
     button.click(sendClick);
 
+    var targetCerca = $("#cerca-persone");
+    targetCerca.keyup(sendKeyupCerca);
+
   }
 
   function sendKeyup(event) {
-    console.log("hello");
+
     var  key = event.which;
     var input = $ (this);
     var txt = input.val();
@@ -44,7 +49,7 @@ $(document).ready(init);
     $(".fa-paper-plane").addClass("non-visibile");
     $(".fa-microphone").removeClass("non-visibile");
 
-    if (event.which == 13 && txt.length > 0) {
+    if (key == 13 && txt.length > 0) {
 
       input.val("");
       sendMessage(txt);
@@ -67,8 +72,10 @@ $(document).ready(init);
     var txt = input.val();
 
     if (txt.length > 0) {
+
       input.val("");
       sendMessage(txt);
+
     }
 
   }
@@ -76,8 +83,7 @@ $(document).ready(init);
   function sendMessage(txt) {
 
     var smsNuovo = $("#nuovoSms");
-    var textSms = $("#templete > .sms");
-    textSms.clone();
+    var textSms = $("#templete > .sms").clone();
 
     textSms.children(".sms-proprio").children(".txt-sms").html(txt);
     textSms.children(".sms-proprio").children(".orario").html(getActualHour());
@@ -98,12 +104,85 @@ $(document).ready(init);
 
     var textAmico = "ok";
     var smsNuovoAmico = $("#nuovoSms");
-    var textSmsAmico = $("#templete1 > .sms");
-    textSmsAmico.clone();
+    var textSmsAmico = $("#templete1 > .sms").clone();
 
     textSmsAmico.children(".sms-amico").children(".txt-sms").html(textAmico);
     textSmsAmico.children(".sms-amico").children(".orario").html(getActualHour());
 
     smsNuovoAmico.append(textSmsAmico);
 
+  }
+
+  function sendKeyupCerca() {
+
+    var input = $ (this);
+    var txt = input.val();
+
+    var nomeAmici = $(".amici h4");
+    nomeAmici.each(function() {
+      var nomeAmicoCorrente = $(this).html();
+
+      // trasformo tutte le lettere  in lettere maiuscole
+      nomeAmicoCorrente = nomeAmicoCorrente.toLocaleUpperCase();
+      txt = txt.toLocaleUpperCase();
+
+        if (!nomeAmicoCorrente.includes(txt) && txt.length > 0) {
+          $(this).parent(".dati").parent(".profilo").parent(".amici").addClass("non-visibile");
+        } else {
+          $(this).parent(".dati").parent(".profilo").parent(".amici").removeClass("non-visibile");
+        }
+
+    });
+  }
+
+  function addTestListener() {
+
+    $(document).on("click", ".sms-options", function() {
+
+      $(".sms-options").addClass("non-visibile");
+      $(".sms-options").next(".sms-options-panel").addClass("non-visibile");
+
+
+      $(this).removeClass("non-visibile");
+      $(this).next(".sms-options-panel").removeClass("non-visibile");
+
+    });
+
+    $(document).on("click", ".sms-cancella", function() {
+      $(this).parent().parent().parent(".sms").addClass("non-visibile")
+    });
+
+    $(document).on("click", function(event) {
+
+      console.log(event.target);
+      if (!$(event.target).hasClass("sms-options")) {
+        $(".sms-options").addClass("non-visibile");
+        $(".sms-options").next(".sms-options-panel").addClass("non-visibile");
+      }
+    });
+
+  }
+
+  function addAmicoListener() {
+
+    $(document).on("click", ".amici", function() {
+
+      $(".amici").removeClass("sfondo-amici");
+      $(".chat-amico").removeClass("non-visibile");
+      $(".col-bottom-right").removeClass("non-visibile");
+
+      var contatto = $(this);
+      contatto.addClass("sfondo-amici");
+
+      var chat = $(".chat-amico");
+      chat.each(function() {
+        if (contatto.attr("data-id") == $(this).attr("data-id")) {
+          $(this).removeClass("non-visibile");
+        } else {
+          $(this).addClass("non-visibile");
+        }
+      });
+
+
+    });
   }

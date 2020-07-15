@@ -39,14 +39,14 @@
           </div>
 
           <div class="nav-bottom-left">
-            <input class="cerca-persone" type="text" name="cerca-persone" value="" placeholder="Cerca o inizia una nuova chat">
+            <input id="cerca-persone" class="cerca-persone" type="text" name="cerca-persone" value="" placeholder="Cerca o inizia una nuova chat">
           </div>
 
         </div>
 
         <div class="col-bottom-left">
 
-          <div class="amici">
+          <div class="amici" data-id="0">
             <div class="profilo">
               <div class="contenitore-bottom">
                 <div class="profilo-img">
@@ -65,7 +65,7 @@
             </div>
           </div>
 
-          <div class="amici">
+          <div class="amici" data-id="1">
             <div class="profilo">
               <div class="contenitore-bottom">
                 <div class="profilo-img">
@@ -84,7 +84,7 @@
             </div>
           </div>
 
-          <div class="amici">
+          <div class="amici" data-id="2">
             <div class="profilo">
               <div class="contenitore-bottom">
                 <div class="profilo-img">
@@ -103,7 +103,7 @@
             </div>
           </div>
 
-          <div class="amici">
+          <div class="amici" data-id="3">
             <div class="profilo">
               <div class="contenitore-bottom">
                 <div class="profilo-img">
@@ -122,7 +122,7 @@
             </div>
           </div>
 
-          <div class="amici">
+          <div class="amici" data-id="4">
             <div class="profilo">
               <div class="contenitore-bottom">
                 <div class="profilo-img">
@@ -141,7 +141,7 @@
             </div>
           </div>
 
-          <div class="amici">
+          <div class="amici" data-id="5">
             <div class="profilo">
               <div class="contenitore-bottom">
                 <div class="profilo-img">
@@ -160,7 +160,7 @@
             </div>
           </div>
 
-          <div class="amici">
+          <div class="amici" data-id="6">
             <div class="profilo">
               <div class="contenitore-bottom">
                 <div class="profilo-img">
@@ -179,7 +179,7 @@
             </div>
           </div>
 
-          <div class="amici">
+          <div class="amici" data-id="7">
             <div class="profilo">
               <div class="contenitore-bottom">
                 <div class="profilo-img">
@@ -206,54 +206,535 @@
       <!-- COLONNA DI DESTRA -->
       <div class="col-right">
 
-        <div class="col-top-right">
+        <div class="chat-amico non-visibile" data-id= "0">
+          <div class="col-top-right">
 
-          <div class="profilo">
-            <div class="contenitore-profilo-top">
-              <div class="profilo-img">
-                <img src="img/Immagine6.png" alt="">
+            <div class="profilo">
+              <div class="contenitore-profilo-top">
+                <div class="profilo-img">
+                  <img src="img/Immagine6.png" alt="">
+                </div>
+              </div>
+
+              <div class="dati">
+                <h4>Stefania</h4>
+                <p>Ultimo accesso oggi alle 15:40</p>
               </div>
             </div>
 
-            <div class="dati">
-              <h4>Stefania</h4>
-              <p>Ultimo accesso oggi alle 15:40</p>
+            <div class="">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
             </div>
+
           </div>
 
-          <div class="">
-            <i class="fas fa-search"></i>
-            <i class="fas fa-paperclip"></i>
-            <i class="fas fa-ellipsis-v"></i>
+          <div id="nuovoSms" class="col-central-right">
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Ciao Stefania...Come stai?</p>
+                <p class="orario">15:50</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-amico">
+                <p class="txt-sms">Ciao...Tutto ok!Tu?Come sta andando il corso?</p>
+                <p class="orario">15:55</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Scassato!...Però soddisfatto! Pensa sono riuscito a riprodurre questa pagina!</p>
+                <p class="orario">15:57</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
-        <div id="nuovoSms" class="col-central-right">
 
-          <div class="sms">
-            <div class="sms-proprio">
-              <p class="txt-sms">Ciao...Come stai?</p>
-              <p class="orario">15:50</p>
+        <div class="chat-amico non-visibile" data-id= "1">
+          <div class="col-top-right">
+
+            <div class="profilo">
+              <div class="contenitore-profilo-top">
+                <div class="profilo-img">
+                  <img src="img/Immagine1.png" alt="">
+                </div>
+              </div>
+
+              <div class="dati">
+                <h4>Andrea</h4>
+                <p>Ultimo accesso oggi alle 15:40</p>
+              </div>
             </div>
+
+            <div class="">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+
           </div>
 
-          <div class="sms">
-            <div class="sms-amico">
-              <p class="txt-sms">Ciao...Tutto ok!Tu?Come sta andando il corso?</p>
-              <p class="orario">15:55</p>
-            </div>
-          </div>
+          <div id="nuovoSms" class="col-central-right">
 
-          <div class="sms">
-            <div class="sms-proprio">
-              <p class="txt-sms">Scassato!...Però soddisfatto! Pensa sono riuscito a riprodurre questa pagina!!!!</p>
-              <p class="orario">15:57</p>
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Ciao Andrea...Come stai?</p>
+                <p class="orario">15:50</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
             </div>
+
+            <div class="sms">
+              <div class="sms-amico">
+                <p class="txt-sms">Ciao...Tutto ok!Tu?Come sta andando il corso?</p>
+                <p class="orario">15:55</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Scassato!...Però soddisfatto! Pensa sono riuscito a riprodurre questa pagina!</p>
+                <p class="orario">15:57</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
 
-        <div class="col-bottom-right">
+        <div class="chat-amico non-visibile" data-id= "2">
+          <div class="col-top-right">
+
+            <div class="profilo">
+              <div class="contenitore-profilo-top">
+                <div class="profilo-img">
+                  <img src="img/Immagine3.png" alt="">
+                </div>
+              </div>
+
+              <div class="dati">
+                <h4>Manuela</h4>
+                <p>Ultimo accesso oggi alle 15:40</p>
+              </div>
+            </div>
+
+            <div class="">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+
+          </div>
+
+          <div id="nuovoSms" class="col-central-right">
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Ciao Manuela...Come stai?</p>
+                <p class="orario">15:50</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-amico">
+                <p class="txt-sms">Ciao...Tutto ok!Tu?Come sta andando il corso?</p>
+                <p class="orario">15:55</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Scassato!...Però soddisfatto! Pensa sono riuscito a riprodurre questa pagina!</p>
+                <p class="orario">15:57</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="chat-amico non-visibile" data-id= "3">
+          <div class="col-top-right">
+
+            <div class="profilo">
+              <div class="contenitore-profilo-top">
+                <div class="profilo-img">
+                  <img src="img/Immagine9.png" alt="">
+                </div>
+              </div>
+
+              <div class="dati">
+                <h4>Vicio</h4>
+                <p>Ultimo accesso oggi alle 15:40</p>
+              </div>
+            </div>
+
+            <div class="">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+
+          </div>
+
+          <div id="nuovoSms" class="col-central-right">
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Ciao Vicio...Come stai?</p>
+                <p class="orario">15:50</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-amico">
+                <p class="txt-sms">Ciao...Tutto ok!Tu?Come sta andando il corso?</p>
+                <p class="orario">15:55</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Scassato!...Però soddisfatto! Pensa sono riuscito a riprodurre questa pagina!</p>
+                <p class="orario">15:57</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="chat-amico non-visibile" data-id= "4">
+          <div class="col-top-right">
+
+            <div class="profilo">
+              <div class="contenitore-profilo-top">
+                <div class="profilo-img">
+                  <img src="img/Immagine8.png" alt="">
+                </div>
+              </div>
+
+              <div class="dati">
+                <h4>Karen</h4>
+                <p>Ultimo accesso oggi alle 15:40</p>
+              </div>
+            </div>
+
+            <div class="">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+
+          </div>
+
+          <div id="nuovoSms" class="col-central-right">
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Ciao Karen...Come stai?</p>
+                <p class="orario">15:50</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-amico">
+                <p class="txt-sms">Ciao...Tutto ok!Tu?Come sta andando il corso?</p>
+                <p class="orario">15:55</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Scassato!...Però soddisfatto! Pensa sono riuscito a riprodurre questa pagina!</p>
+                <p class="orario">15:57</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="chat-amico non-visibile" data-id= "5">
+          <div class="col-top-right">
+
+            <div class="profilo">
+              <div class="contenitore-profilo-top">
+                <div class="profilo-img">
+                  <img src="img/Immagine7.png" alt="">
+                </div>
+              </div>
+
+              <div class="dati">
+                <h4>Davide</h4>
+                <p>Ultimo accesso oggi alle 15:40</p>
+              </div>
+            </div>
+
+            <div class="">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+
+          </div>
+
+          <div id="nuovoSms" class="col-central-right">
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Ciao Davide...Come stai?</p>
+                <p class="orario">15:50</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-amico">
+                <p class="txt-sms">Ciao...Tutto ok!Tu?Come sta andando il corso?</p>
+                <p class="orario">15:55</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Scassato!...Però soddisfatto! Pensa sono riuscito a riprodurre questa pagina!</p>
+                <p class="orario">15:57</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="chat-amico non-visibile" data-id= "6">
+          <div class="col-top-right">
+
+            <div class="profilo">
+              <div class="contenitore-profilo-top">
+                <div class="profilo-img">
+                  <img src="img/Immagine6.png" alt="">
+                </div>
+              </div>
+
+              <div class="dati">
+                <h4>Ilenia</h4>
+                <p>Ultimo accesso oggi alle 15:40</p>
+              </div>
+            </div>
+
+            <div class="">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+
+          </div>
+
+          <div id="nuovoSms" class="col-central-right">
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Ciao Ilenia...Come stai?</p>
+                <p class="orario">15:50</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-amico">
+                <p class="txt-sms">Ciao...Tutto ok!Tu?Come sta andando il corso?</p>
+                <p class="orario">15:55</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Scassato!...Però soddisfatto! Pensa sono riuscito a riprodurre questa pagina!</p>
+                <p class="orario">15:57</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="chat-amico non-visibile" data-id= "7">
+          <div class="col-top-right">
+
+            <div class="profilo">
+              <div class="contenitore-profilo-top">
+                <div class="profilo-img">
+                  <img src="img/Immagine1.png" alt="">
+                </div>
+              </div>
+
+              <div class="dati">
+                <h4>Michele</h4>
+                <p>Ultimo accesso oggi alle 15:40</p>
+              </div>
+            </div>
+
+            <div class="">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+
+          </div>
+
+          <div id="nuovoSms" class="col-central-right">
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Ciao Michele...Come stai?</p>
+                <p class="orario">15:50</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-amico">
+                <p class="txt-sms">Ciao...Tutto ok!Tu?Come sta andando il corso?</p>
+                <p class="orario">15:55</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sms">
+              <div class="sms-proprio">
+                <p class="txt-sms">Scassato!...Però soddisfatto! Pensa sono riuscito a riprodurre questa pagina!</p>
+                <p class="orario">15:57</p>
+                <i class="fas fa-chevron-down sms-options non-visibile"></i>
+                <div class="sms-options-panel non-visibile">
+                  <div class="sms-info">Info messaggio</div>
+                  <div class="sms-cancella">Cancella messaggio</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-bottom-right non-visibile">
           <i class="far fa-grin"></i>
           <input id="messaggio" type="text" name="messaggio" value="" placeholder="Scrivi un messaggio">
           <i class="fas fa-microphone"></i>
@@ -268,6 +749,11 @@
         <div class="sms-proprio">
           <p class="txt-sms"></p>
           <p class="orario"></p>
+          <i class="fas fa-chevron-down sms-options non-visibile"></i>
+          <div class="sms-options-panel non-visibile">
+            <div class="sms-info">Info messaggio</div>
+            <div class="sms-cancella">Cancella messaggio</div>
+          </div>
         </div>
       </div>
     </div>
@@ -277,10 +763,14 @@
         <div class="sms-amico">
           <p class="txt-sms"></p>
           <p class="orario"></p>
+          <i class="fas fa-chevron-down sms-options non-visibile"></i>
+          <div class="sms-options-panel non-visibile">
+            <div class="sms-info">Info messaggio</div>
+            <div class="sms-cancella">Cancella messaggio</div>
+          </div>
         </div>
       </div>
     </div>
-
 
   </body>
 </html>
