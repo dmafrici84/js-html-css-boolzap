@@ -82,7 +82,7 @@ $(document).ready(init);
 
   function sendMessage(txt) {
 
-    var smsNuovo = $("#nuovoSms");
+    var smsNuovo = $("#nuovoSms:not(.non-visibile)");
     var textSms = $("#templete > .sms").clone();
 
     textSms.children(".sms-proprio").children(".txt-sms").html(txt);
@@ -103,7 +103,7 @@ $(document).ready(init);
   function sendMessageAmico() {
 
     var textAmico = "ok";
-    var smsNuovoAmico = $("#nuovoSms");
+    var smsNuovoAmico = $("#nuovoSms:not(.non-visibile)");
     var textSmsAmico = $("#templete1 > .sms").clone();
 
     textSmsAmico.children(".sms-amico").children(".txt-sms").html(textAmico);
@@ -178,8 +178,10 @@ $(document).ready(init);
       chat.each(function() {
         if (contatto.attr("data-id") == $(this).attr("data-id")) {
           $(this).removeClass("non-visibile");
+          $(this).children("#nuovoSms").removeClass("non-visibile");
         } else {
           $(this).addClass("non-visibile");
+          $(this).children("#nuovoSms").addClass("non-visibile");
         }
       });
 
