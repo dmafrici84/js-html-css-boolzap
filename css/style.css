@@ -27,6 +27,8 @@ i:hover {
 .profilo-img {
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .profilo-img img {
@@ -54,6 +56,12 @@ i:hover {
 
 }
 
+.contenitore-profilo-top {
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+}
+
 .nav-top-left {
   width: 100%;
   height: 60px;
@@ -62,12 +70,6 @@ i:hover {
   align-items: center;
   background-color: #dbdbdb;
   border-right: solid 1px #bfbfbf;
-}
-
-.contenitore-profilo-top {
-  height: 50px;
-  width: 50px;
-  margin-left: 10px;
 }
 
 .nav-bottom-left {
@@ -102,14 +104,12 @@ i:hover {
 }
 
 .amici {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-bottom: solid 1px #bfbfbf;
 }
 
 .profilo {
   display: flex;
+  align-items: center;
 }
 
 .contenitore-bottom {
@@ -119,17 +119,31 @@ i:hover {
 }
 
 .profilo .dati {
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 10px;
 }
 
-.profilo .dati h4 {
+.profilo .dati .nome-orario {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.profilo .dati .nome-orario h4 {
   font-size: 18px;
 }
 
-.profilo .dati p, .orario p {
+.profilo .dati .nome-orario span {
+  font-size: 11px;
+  color: #bfbfbf;
+  margin-right: 10px;
+}
+
+.profilo .dati p {
   font-size: 13px;
 }
 
@@ -143,10 +157,6 @@ i:hover {
 
 .amici p {
   color: #bfbfbf;
-}
-
-.orario {
-  margin-right: 10px;
 }
 
 .col-bottom-left .amici:hover {
@@ -177,6 +187,10 @@ i:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.col-top-right-left {
+  width: 30%;
 }
 
 .col-central-right {
@@ -232,6 +246,7 @@ i:hover {
   bottom: 0;
   right: 0;
   font-size: 11px;
+  margin-right: 10px;
 }
 
 .sms-proprio .sms-options, .sms-amico .sms-options {

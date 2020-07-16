@@ -22,169 +22,179 @@ $(document).ready(init);
 // FUNZIONI
 
   function init(){
-    addInputEventLisstener();
+    addInputEventListener();
+    addContactClickListener()
     addTestListener();
-    addAmicoListener();
+    addChatContactClickListener()
   }
 
-  function addInputEventLisstener() {
+    // FUNZIONE CHE GESTISCE L'INPUT CON ID=MESSAGGIO
+    function addInputEventListener() {
 
-    var target = $("#messaggio");
-    target.keyup(sendKeyup);
+      var target = $("#messaggio");
+      target.keyup(sendKeyup);
 
-    var button = $(".fa-paper-plane");
-    button.click(sendClick);
-
-    var targetCerca = $("#cerca-persone");
-    targetCerca.keyup(sendKeyupCerca);
-
-  }
-
-  function sendKeyup(event) {
-
-    var  key = event.which;
-    var input = $ (this);
-    var txt = input.val();
-
-    $(".fa-paper-plane").addClass("non-visibile");
-    $(".fa-microphone").removeClass("non-visibile");
-
-    if (key == 13 && txt.length > 0) {
-
-      input.val("");
-      sendMessage(txt);
-
-    } else if (txt.length > 0) {
-
-      $(".fa-paper-plane").removeClass("non-visibile");
-      $(".fa-microphone").addClass("non-visibile");
+      var button = $(".fa-paper-plane");
+      button.click(sendClick);
 
     }
 
-  }
+      function sendKeyup(event) {
 
-  function sendClick() {
+        var  key = event.which;
+        var input = $ (this);
+        var txt = input.val();
 
-    $(".fa-paper-plane").addClass("non-visibile");
-    $(".fa-microphone").removeClass("non-visibile");
+        $(".fa-paper-plane").addClass("non-visibile");
+        $(".fa-microphone").removeClass("non-visibile");
 
-    var input = $("#messaggio");
-    var txt = input.val();
+        if (key == 13 && txt.length > 0) {
 
-    if (txt.length > 0) {
+          input.val("");
+          sendMessage(txt);
 
-      input.val("");
-      sendMessage(txt);
+        } else if (txt.length > 0) {
 
-    }
+          $(".fa-paper-plane").removeClass("non-visibile");
+          $(".fa-microphone").addClass("non-visibile");
 
-  }
-
-  function sendMessage(txt) {
-
-    var smsNuovo = $("#nuovoSms:not(.non-visibile)");
-    var textSms = $("#templete > .sms").clone();
-
-    textSms.children(".sms-proprio").children(".txt-sms").html(txt);
-    textSms.children(".sms-proprio").children(".orario").html(getActualHour());
-
-    smsNuovo.append(textSms);
-
-    setTimeout((sendMessageAmico), 1000);
-  }
-
-  function getActualHour() {
-
-    var date = new Date();
-    return date.getHours() + ":" + date.getMinutes();
-
-  }
-
-  function sendMessageAmico() {
-
-    var textAmico = "ok";
-    var smsNuovoAmico = $("#nuovoSms:not(.non-visibile)");
-    var textSmsAmico = $("#templete1 > .sms").clone();
-
-    textSmsAmico.children(".sms-amico").children(".txt-sms").html(textAmico);
-    textSmsAmico.children(".sms-amico").children(".orario").html(getActualHour());
-
-    smsNuovoAmico.append(textSmsAmico);
-
-  }
-
-  function sendKeyupCerca() {
-
-    var input = $ (this);
-    var txt = input.val();
-
-    var nomeAmici = $(".amici h4");
-    nomeAmici.each(function() {
-      var nomeAmicoCorrente = $(this).html();
-
-      // trasformo tutte le lettere  in lettere maiuscole
-      nomeAmicoCorrente = nomeAmicoCorrente.toLocaleUpperCase();
-      txt = txt.toLocaleUpperCase();
-
-        if (!nomeAmicoCorrente.includes(txt) && txt.length > 0) {
-          $(this).parent(".dati").parent(".profilo").parent(".amici").addClass("non-visibile");
-        } else {
-          $(this).parent(".dati").parent(".profilo").parent(".amici").removeClass("non-visibile");
         }
 
-    });
-  }
-
-  function addTestListener() {
-
-    $(document).on("click", ".sms-options", function() {
-
-      $(".sms-options").addClass("non-visibile");
-      $(".sms-options").next(".sms-options-panel").addClass("non-visibile");
-
-
-      $(this).removeClass("non-visibile");
-      $(this).next(".sms-options-panel").removeClass("non-visibile");
-
-    });
-
-    $(document).on("click", ".sms-cancella", function() {
-      $(this).parent().parent().parent(".sms").addClass("non-visibile")
-    });
-
-    $(document).on("click", function(event) {
-
-      console.log(event.target);
-      if (!$(event.target).hasClass("sms-options")) {
-        $(".sms-options").addClass("non-visibile");
-        $(".sms-options").next(".sms-options-panel").addClass("non-visibile");
       }
-    });
 
-  }
+      function sendClick() {
 
-  function addAmicoListener() {
+        $(".fa-paper-plane").addClass("non-visibile");
+        $(".fa-microphone").removeClass("non-visibile");
 
-    $(document).on("click", ".amici", function() {
+        var input = $("#messaggio");
+        var txt = input.val();
 
-      $(".amici").removeClass("sfondo-amici");
-      $(".chat-amico").removeClass("non-visibile");
-      $(".col-bottom-right").removeClass("non-visibile");
+        if (txt.length > 0) {
 
-      var contatto = $(this);
-      contatto.addClass("sfondo-amici");
+          input.val("");
+          sendMessage(txt);
 
-      var chat = $(".chat-amico");
-      chat.each(function() {
-        if (contatto.attr("data-id") == $(this).attr("data-id")) {
+        }
+
+      }
+
+        function sendMessage(txt) {
+
+          var smsNuovo = $("#nuovoSms:not(.non-visibile)");
+          var textSms = $("#templete > .sms").clone();
+
+          textSms.find(".txt-sms").html(txt);
+          textSms.find(".orario").html(getActualHour());
+
+          smsNuovo.append(textSms);
+
+          setTimeout((sendMessageContact), 1000);
+        }
+
+          function getActualHour() {
+
+            var date = new Date();
+            return date.getHours() + ":" + date.getMinutes();
+
+          }
+
+          function sendMessageContact() {
+
+            var textContact = "ok";
+            var smsNuovoContact = $("#nuovoSms:not(.non-visibile)");
+            var textSmsContact = $("#templete1 > .sms").clone();
+
+            textSmsContact.find(".txt-sms").html(textContact);
+            textSmsContact.find(".orario").html(getActualHour());
+
+            smsNuovoContact.append(textSmsContact);
+
+          }
+
+    // FUNZIONE CHE GESTISCE L'INPUT CON ID= CERCA-PERSONE
+    function addContactClickListener() {
+
+      var targetCerca = $("#cerca-persone");
+      targetCerca.keyup(sendKeyupCerca);
+
+    }
+
+      function sendKeyupCerca() {
+
+        var input = $ (this);
+        var txt = input.val();
+
+        var nomeContacts = $(".amici h4");
+        nomeContacts.each(function() {
+          var nomeContactCorrente = $(this).html();
+
+          // trasformo tutte le lettere  in lettere maiuscole
+          nomeContactCorrente = nomeContactCorrente.toLocaleUpperCase();
+          txt = txt.toLocaleUpperCase();
+
+            if (!nomeContactCorrente.includes(txt) && txt.length > 0) {
+              $(this).parents(".amici").addClass("non-visibile");
+            } else {
+              $(this).parents(".amici").removeClass("non-visibile");
+            }
+
+        });
+      }
+
+    // FUNZIONE CHE MOSTRA/NASCONDE IL MENU DI OGNI SINGOLO MESSAGGIO.INOLTRE E'POSSIBILE ELIMINARE IL MESSAGGIO CLICCANDO SU "CANCELLA MESSAGGIO"
+    function addTestListener() {
+
+      $(document).on("click", ".sms-options", function() {
+
+        if ($(this).hasClass("non-visibile")){
+          $(".sms-options").addClass("non-visibile");
+          $(".sms-options").next(".sms-options-panel").addClass("non-visibile");
           $(this).removeClass("non-visibile");
-          $(this).children("#nuovoSms").removeClass("non-visibile");
+          $(this).next(".sms-options-panel").removeClass("non-visibile");
         } else {
-          $(this).addClass("non-visibile");
-          $(this).children("#nuovoSms").addClass("non-visibile");
+          $(".sms-options").addClass("non-visibile");
+          $(".sms-options").next(".sms-options-panel").addClass("non-visibile");
+        }
+
+      });
+
+      $(document).on("click", ".sms-cancella", function() {
+        $(this).parents(".sms").addClass("non-visibile")
+      });
+
+      $(document).on("click", function(event) {
+
+        if (!$(event.target).hasClass("sms-options")) {
+          $(".sms-options").addClass("non-visibile");
+          $(".sms-options").next(".sms-options-panel").addClass("non-visibile");
         }
       });
 
+    }
 
-    });
-  }
+    // FUNZIONE CHE MOSTRA LA CHAT DEL CONTATTO CORRISPONDENTE
+    function addChatContactClickListener() {
+
+      $(document).on("click", ".amici", function() {
+
+        $(".amici").removeClass("sfondo-amici");
+        $(".chat-amico").removeClass("non-visibile");
+        $(".col-bottom-right").removeClass("non-visibile");
+
+        var contact = $(this);
+        contact.addClass("sfondo-amici");
+
+        var chat = $(".chat-amico");
+        chat.each(function() {
+          if (contact.attr("data-id") == $(this).attr("data-id")) {
+            $(this).removeClass("non-visibile");
+            $(this).children("#nuovoSms").removeClass("non-visibile");
+          } else {
+            $(this).addClass("non-visibile");
+            $(this).children("#nuovoSms").addClass("non-visibile");
+          }
+        });
+
+      });
+    }
