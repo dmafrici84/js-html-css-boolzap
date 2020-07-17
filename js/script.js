@@ -81,8 +81,14 @@ $(document).ready(init);
 
         function sendMessage(txt) {
 
+
           var smsNuovo = $("#nuovoSms:not(.non-visibile)");
-          var textSms = $("#templete > .sms").clone();
+          var textSms = $("#templete > .sms");
+
+          textSms.children("div").removeClass("sms-amico");
+          textSms.children("div").addClass("sms-proprio");
+
+          textSms = textSms.clone();
 
           textSms.find(".txt-sms").html(txt);
           textSms.find(".orario").html(getActualHour());
@@ -103,7 +109,12 @@ $(document).ready(init);
 
             var textContact = "ok";
             var smsNuovoContact = $("#nuovoSms:not(.non-visibile)");
-            var textSmsContact = $("#templete1 > .sms").clone();
+            var textSmsContact = $("#templete > .sms");
+
+            textSmsContact.children("div").removeClass("sms-proprio");
+            textSmsContact.children("div").addClass("sms-amico");
+
+            textSmsContact = textSmsContact.clone();
 
             textSmsContact.find(".txt-sms").html(textContact);
             textSmsContact.find(".orario").html(getActualHour());
