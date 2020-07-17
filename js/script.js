@@ -22,10 +22,12 @@ $(document).ready(init);
 // FUNZIONI
 
   function init(){
+
     addInputEventListener();
-    addContactClickListener()
+    addContactClickListener();
     addTestListener();
-    addChatContactClickListener()
+    addChatContactClickListener();
+
   }
 
     // FUNZIONE CHE GESTISCE L'INPUT CON ID=MESSAGGIO
@@ -81,7 +83,6 @@ $(document).ready(init);
 
         function sendMessage(txt) {
 
-
           var smsNuovo = $("#nuovoSms:not(.non-visibile)");
           var textSms = $("#templete > .sms");
 
@@ -96,6 +97,7 @@ $(document).ready(init);
           smsNuovo.append(textSms);
 
           setTimeout((sendMessageContact), 1000);
+
         }
 
           function getActualHour() {
@@ -138,19 +140,25 @@ $(document).ready(init);
 
         var nomeContacts = $(".amici h4");
         nomeContacts.each(function() {
+
           var nomeContactCorrente = $(this).html();
 
           // trasformo tutte le lettere  in lettere maiuscole
           nomeContactCorrente = nomeContactCorrente.toLocaleUpperCase();
           txt = txt.toLocaleUpperCase();
 
-            if (!nomeContactCorrente.includes(txt) && txt.length > 0) {
-              $(this).parents(".amici").addClass("non-visibile");
-            } else {
-              $(this).parents(".amici").removeClass("non-visibile");
-            }
+          if (!nomeContactCorrente.includes(txt) && txt.length > 0) {
+
+            $(this).parents(".amici").addClass("non-visibile");
+
+          } else {
+
+            $(this).parents(".amici").removeClass("non-visibile");
+
+          }
 
         });
+
       }
 
     // FUNZIONE CHE MOSTRA/NASCONDE IL MENU DI OGNI SINGOLO MESSAGGIO.INOLTRE E'POSSIBILE ELIMINARE IL MESSAGGIO CLICCANDO SU "CANCELLA MESSAGGIO"
@@ -159,27 +167,37 @@ $(document).ready(init);
       $(document).on("click", ".sms-options", function() {
 
         if ($(this).hasClass("non-visibile")){
+
           $(".sms-options").addClass("non-visibile");
           $(".sms-options").next(".sms-options-panel").addClass("non-visibile");
+
           $(this).removeClass("non-visibile");
           $(this).next(".sms-options-panel").removeClass("non-visibile");
+
         } else {
+
           $(".sms-options").addClass("non-visibile");
           $(".sms-options").next(".sms-options-panel").addClass("non-visibile");
+
         }
 
       });
 
       $(document).on("click", ".sms-cancella", function() {
-        $(this).parents(".sms").addClass("non-visibile")
+
+        $(this).parents(".sms").addClass("non-visibile");
+
       });
 
       $(document).on("click", function(event) {
 
         if (!$(event.target).hasClass("sms-options")) {
+
           $(".sms-options").addClass("non-visibile");
           $(".sms-options").next(".sms-options-panel").addClass("non-visibile");
+
         }
+
       });
 
     }
@@ -198,14 +216,21 @@ $(document).ready(init);
 
         var chat = $(".chat-amico");
         chat.each(function() {
+
           if (contact.attr("data-id") == $(this).attr("data-id")) {
+
             $(this).removeClass("non-visibile");
             $(this).children("#nuovoSms").removeClass("non-visibile");
+
           } else {
+
             $(this).addClass("non-visibile");
             $(this).children("#nuovoSms").addClass("non-visibile");
+
           }
+
         });
 
       });
+
     }
